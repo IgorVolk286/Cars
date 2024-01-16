@@ -1,8 +1,8 @@
 {
-  "name": "Test",
+  "name": "Test of goit",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://IgorVolk286.github.io/test-/",
+  "homepage": "https://IgorVolk286.github.io/Cars/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
