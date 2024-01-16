@@ -1,12 +1,23 @@
-import { Container } from './HomePage.styled.js';
+import {
+  Container,
+  Wrap,
+  Section,
+  Title,
+  Button,
+  StyledLink,
+} from './HomePage.styled.js';
 
 export const HomePage = () => {
   return (
-    <section>
+    <Section>
       <Container>
-        <h1>CAN BAY AUTO</h1>
-        <button type="button"> Catalog </button>
+        <Wrap>
+          <Title>Choose you car</Title>
+          <Button type="button">
+            <StyledLink to="/catalog"> Catalog </StyledLink>
+          </Button>
+        </Wrap>
       </Container>
-    </section>
+    </Section>
   );
 };
