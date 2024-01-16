@@ -8,7 +8,7 @@ export const App = () => {
         <Route path="/" element={<Layout />}>
           <Route path="/" index element={<HomePage />}></Route>
           {/* <Route path="/catalog" element={<Catalog />}></Route>
-        <Route path="/favorite" element={<Favorite />}></Route> */}
+          <Route path="/favorite" element={<Favorite />}></Route> */}
         </Route>
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>

@@ -23,12 +23,10 @@ export const Title = styled.h1`
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
-  margin-top: 60px;
-  margin-bottom: 60px;
 `;
 export const Wrap = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-direction: column;
   align-self: center;
   width: 400px;
@@ -49,6 +47,12 @@ export const Button = styled.button`
     background: #0b44cd;
     box-shadow: 0px 4px 14px 0px rgba(64, 123, 255, 0.54);
   }
+`;
+export const List = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
 `;
 
 export const StyledLink = styled(NavLink)`

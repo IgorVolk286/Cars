@@ -4,7 +4,6 @@ import { ReactComponent as Logo } from '../../img/icons_553938.svg';
 export const Container = styled.div`
   width: 1200px;
   padding: 0px 20px;
-  /* background-color: gray; */
   margin-left: auto;
   margin-right: auto;
 `;
