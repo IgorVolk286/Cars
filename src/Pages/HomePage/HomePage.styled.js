@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import background from '../img/home-back.jpg';
+import background from '../../img/home-back.jpg';
 import { NavLink } from 'react-router-dom';
 
 export const Section = styled.section`

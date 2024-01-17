@@ -6,7 +6,7 @@ import {
   Button,
   List,
   StyledLink,
-} from './HomePage.styled.js';
+} from '../HomePage/HomePage.styled.js';
 
 export const HomePage = () => {
   return (
