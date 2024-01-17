@@ -11,7 +11,8 @@ const handleRejected = (state, { payload }) => {
 export const carsSlice = createSlice({
   name: 'cars',
   initialState: {
-    cars: [null],
+    cars: [],
+    car: {},
     isLoading: false,
     error: null,
   },
@@ -24,17 +25,16 @@ export const carsSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.cars = payload;
-        console.log(payload);
       })
+
       .addCase(getByIdCar.pending, (state, action) => {
         handlePending(state, action);
       })
       .addCase(getByIdCar.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.error = null;
-        const OneCar = payload;
-        const indexCar = state.cars.findIndex(car => car.id === payload.id);
-        state.cars[indexCar] = OneCar;
+
+        state.car = payload;
       })
       .addCase(fetcherAllCars.rejected, (state, action) => {
         handleRejected(state, action);
@@ -49,7 +49,7 @@ export const carsReducer = carsSlice.reducer;
 export const selectCars = state => state.cars.cars;
 export const selectIsLoading = state => state.cars.isLoading;
 export const selectError = state => state.cars.error;
-
+export const selectCar = state => state.cars.car;
 // export const selectVisibleContacts = createSelector(
 //   [selectContacts, selectFilter],
 //   (contacts, filter) =>
