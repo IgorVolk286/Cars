@@ -64,7 +64,7 @@ export const Title = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 140px;
+  gap: 167px;
   margin-top: 14px;
 `;
 export const Span = styled.span`

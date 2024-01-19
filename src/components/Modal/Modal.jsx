@@ -32,8 +32,8 @@ export const ModalCar = ({ children, toggleModal }) => {
         </ButtonClose>
         {children}
 
-        <ButtonCall type="buttom" onClick={toggleModal}>
-          Rental car
+        <ButtonCall type="buttom">
+          <a href="tel:+380730000000">Rental Car</a>
         </ButtonCall>
       </Modal>
     </OverLay>,

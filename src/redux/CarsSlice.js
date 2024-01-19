@@ -12,7 +12,6 @@ export const carsSlice = createSlice({
   name: 'cars',
   initialState: {
     cars: [],
-    car: {},
     isLoading: false,
     error: null,
   },
@@ -33,9 +32,8 @@ export const carsSlice = createSlice({
       .addCase(getByIdCar.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.error = null;
-
-        state.car = payload;
       })
+
       .addCase(fetcherAllCars.rejected, (state, action) => {
         handleRejected(state, action);
       })
@@ -49,7 +47,8 @@ export const carsReducer = carsSlice.reducer;
 export const selectCars = state => state.cars.cars;
 export const selectIsLoading = state => state.cars.isLoading;
 export const selectError = state => state.cars.error;
-export const selectCar = state => state.cars.car;
+// export const selectCar = state => state.cars.car;
+
 // export const selectVisibleContacts = createSelector(
 //   [selectContacts, selectFilter],
 //   (contacts, filter) =>

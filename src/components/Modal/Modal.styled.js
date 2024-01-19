@@ -5,8 +5,8 @@ export const OverLay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 0;
-  left: 0;
+  /* top: 0;
+  left: 0; */
   width: 100%;
   height: 100%;
   background: rgba(18, 20, 23, 0.5);
