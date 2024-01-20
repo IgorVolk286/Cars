@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { ReactComponent as IconNorm } from '../../img/normal.svg';
+import { ReactComponent as IconActive } from '../../img/active.svg';
 export const Card = styled.div`
   width: 274px;
   height: 426px;
@@ -22,6 +23,10 @@ export const Container = styled.div`
   margin-right: auto;
 `;
 export const HardNorm = styled(IconNorm)`
+  width: 18px;
+  height: 18px;
+`;
+export const HardActive = styled(IconActive)`
   width: 18px;
   height: 18px;
 `;

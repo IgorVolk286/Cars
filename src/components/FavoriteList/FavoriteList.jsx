@@ -12,9 +12,10 @@ import {
   Titl,
   Auto,
   ItemAuto,
+  HardActive,
 } from '../FavoriteList/FavoriteList.styled.js';
 import { useDispatch, useSelector } from 'react-redux';
-import { getFavoriteCar } from '../../redux/operations.js';
+
 import { selectFavorite, delCar } from '../../redux/FavoriteSlice.js';
 import { ModalCar } from 'components/Modal/Modal.jsx';
 import { ModalContent } from 'components/Modal/ModalContent/Modalcontent.jsx';
@@ -24,15 +25,11 @@ export const FavoriteList = () => {
   const [idTarget, setidTarget] = useState('');
   const favorit = useSelector(selectFavorite);
 
-  console.log(favorit);
-
   const dispatch = useDispatch();
 
   const createFavorite = e => {
     const idCurrent = e.currentTarget.id;
-    console.log(idCurrent);
     const index = favorit.findIndex(item => item.id === idCurrent);
-    console.log(index);
     if (index !== -1) {
       dispatch(delCar(idCurrent));
     }
@@ -42,7 +39,6 @@ export const FavoriteList = () => {
     setisOpen(!isOpen);
     setidTarget(e.target.id);
   };
-
   return (
     <Container>
       <List>
@@ -56,14 +52,17 @@ export const FavoriteList = () => {
             rentalPrice,
             address,
             type,
-            mileage,
             rentalCompany,
             accessories,
           }) => {
             return (
               <Card key={id} id={id}>
                 <ButtonFavorit type="button" id={id} onClick={createFavorite}>
-                  <HardNorm />
+                  {favorit.some(item => item.id === id) ? (
+                    <HardActive />
+                  ) : (
+                    <HardNorm />
+                  )}
                 </ButtonFavorit>
                 <Img src={img} alt="img auto" />
                 <Title>

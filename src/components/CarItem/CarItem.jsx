@@ -10,6 +10,7 @@ import {
   Titl,
   Auto,
   ItemAuto,
+  HardActive,
 } from 'components/CarItem/CarItem.styled';
 import { ModalCar } from 'components/Modal/Modal';
 import { ModalContent } from 'components/Modal/ModalContent/Modalcontent';
@@ -18,12 +19,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectFavorite } from '../../redux/FavoriteSlice.js';
 import { delCar } from '../../redux/FavoriteSlice';
 console.log(delCar);
-const bn = {
-  fill: 'red',
-};
-const bk = {
-  fill: 'red',
-};
+
 export const CarItem = ({ car }) => {
   const [isOpen, setisOpen] = useState(false);
   console.log(car.id);
@@ -65,9 +61,7 @@ export const CarItem = ({ car }) => {
   return (
     <Card key={id} id={id}>
       <ButtonFavorit type="button" id={id} onClick={createFavorite}>
-        <HardNorm
-        // style={!favorite.find(item => item.id === id) ? { bn } : { bk }}
-        />
+        {favorit.some(item => item.id === id) ? <HardActive /> : <HardNorm />}
       </ButtonFavorit>
       <Img src={img} alt="img auto" />
       <Title>

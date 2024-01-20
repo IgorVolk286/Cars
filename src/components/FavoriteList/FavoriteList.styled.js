@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { ReactComponent as IconNorm } from '../../img/normal.svg';
+import { ReactComponent as IconActive } from '../../img/active.svg';
 export const Card = styled.div`
   width: 274px;
   height: 426px;
@@ -107,4 +108,8 @@ export const ItemAuto = styled.li`
   font-weight: 400;
   line-height: 18px;
   padding: 0px 6px;
+`;
+export const HardActive = styled(IconActive)`
+  width: 18px;
+  height: 18px;
 `;
