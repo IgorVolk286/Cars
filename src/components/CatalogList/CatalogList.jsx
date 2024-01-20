@@ -7,9 +7,9 @@ import { useSelector } from 'react-redux';
 import { selectfilteredCars } from '../../redux/CarsSlice.js';
 import { CarItem } from '../CarItem/CarItem.jsx';
 import { fetcherAllCars } from '../../redux/operations.js';
-
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+
 export const CatalogList = () => {
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);

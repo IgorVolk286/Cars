@@ -1,6 +1,6 @@
 import React from 'react';
 import { createPortal } from 'react-dom';
-import { OverLay, ButtonClose, Modal, Svg, ButtonCall } from './Modal.styled';
+import { OverLay, ButtonClose, Modal, Svg } from './Modal.styled';
 import { useEffect } from 'react';
 
 const modalElement = document.getElementById('portal');

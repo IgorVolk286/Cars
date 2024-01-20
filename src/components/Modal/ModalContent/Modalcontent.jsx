@@ -1,7 +1,3 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { getByIdCar } from '../../../redux/operations.js';
-import { useEffect } from 'react';
-import { selectCar } from '../../../redux/CarsSlice.js';
 import {
   Wrap,
   Img,
@@ -20,14 +16,6 @@ import {
   Link,
 } from '../ModalContent/modalcontent.styled.js';
 export const ModalContent = ({ idTarget, car }) => {
-  // const dispatch = useDispatch();
-  console.log(car);
-  // useEffect(() => {
-  //   dispatch(getByIdCar(idTarget));
-  // }, [idTarget, dispatch]);
-
-  // const car = useSelector(selectCar);
-  // console.log(car);
   return (
     <Wrap>
       <Img src={car.img} alt="img auto" />
