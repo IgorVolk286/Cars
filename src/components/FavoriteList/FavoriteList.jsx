@@ -22,7 +22,7 @@ import { ModalContent } from 'components/Modal/ModalContent/Modalcontent.jsx';
 export const FavoriteList = () => {
   const [isOpen, setisOpen] = useState(false);
   const [idTarget, setidTarget] = useState('');
-  console.log(idTarget);
+
   const favorit = useSelector(selectFavorite);
 
   const dispatch = useDispatch();

@@ -16,7 +16,6 @@ import {
   Link,
 } from './modalcontent.styled';
 export const ModalContent = ({ idTarget, car }) => {
-  console.log(car);
   return (
     <Wrap>
       <Img src={car.img} alt="img auto" />

@@ -18,7 +18,6 @@ import { getFavoriteCar } from '../../redux/operations';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFavorite } from '../../redux/FavoriteSlice.js';
 import { delCar } from '../../redux/FavoriteSlice';
-console.log(delCar);
 
 export const CarItem = ({ car }) => {
   const [isOpen, setisOpen] = useState(false);
@@ -47,9 +46,7 @@ export const CarItem = ({ car }) => {
 
   const createFavorite = e => {
     const idCurrent = e.currentTarget.id;
-    console.log(idCurrent);
     const index = favorit.findIndex(item => item.id === idCurrent);
-    console.log(index);
 
     if (index !== -1) {
       dispatch(delCar(idCurrent));

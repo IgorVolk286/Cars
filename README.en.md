@@ -1,30 +1,17 @@
-# React homework template
+# about
 
-This project was created with
+This is an application for searching for car rentals under certain conditions.
+Includes three pages: Home, Catalog page, Favorites page - for displaying
+advertisements that satisfy the wishes of the applicant.
+
+# React
+
+!-- This project was created with
 [Create React App](https://github.com/facebook/create-react-app). To get
 acquainted and configure additional features
 [refer to documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Creating a repository by template
-
-Use this GoIT repository as a template for creating a repository
-of your project. To use it just tap the `«Use this template»` button and choose
-`«Create a new repository»` option, as you can see on the image below.
-
-![Creating repo from a template step 1](./assets/template-step-1.png)
-
-The page for creating a new repository will open on the next step. Fill out
-the Name field and make sure the repository is public, then click
-`«Create repository from template»` button.
-
-![Creating repo from a template step 2](./assets/template-step-2.png)
-
-You now have a personal project repository, having a repository-template file 
-and folder structure. After that, you can work with it as you would with any 
-other private repository: clone it on your computer, write code, commit, and 
-send it to GitHub.
-
-## Preparing for coding
+## coding
 
 1. Make sure you have an LTS version of Node.js installed on your computer.
    [Download and install](https://nodejs.org/en/) if needed.
@@ -70,8 +57,7 @@ icon, and in the drop-down window, follow the link `Details`.
 
 After some time, usually a couple of minutes, the live page can be viewed at the
 address specified in the edited `homepage` property. For example, here is a link
-to a live version for this repository
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
+to a live version for this repository ["https://IgorVolk286.github.io/Cars/"]
 
 If a blank page opens, make sure there are no errors in the `Console` tab
 related to incorrect paths to the CSS and JS files of the project (**404**). You
@@ -86,7 +72,7 @@ of your repository in the `basename` prop. Slashes at the beginning and end of
 the line are required.
 
 ```jsx
-<BrowserRouter basename="/your_repo_name/">
+<BrowserRouter basename="/Cars">
   <App />
 </BrowserRouter>
 ```
@@ -102,4 +88,4 @@ the line are required.
    initialized and linted and built before deployment.
 3. If all steps are successful, the built production version of the project
    files is sent to the `gh-pages` branch. Otherwise, the script execution log
-   will indicate what the problem is.
+   will indicate what the problem is. -->

@@ -52,7 +52,5 @@ export const selectError = state => state.cars.error;
 
 export const selectfilteredCars = createSelector(
   [selectCars, selectFilter],
-  (cars, filter) => {
-    cars.filter(car => car.make.includes(filter.brand));
-  }
+  (cars, filter) => cars.filter(car => car.make.includes(filter.brand))
 );

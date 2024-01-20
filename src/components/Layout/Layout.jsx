@@ -27,7 +27,7 @@ export const Layout = () => {
                 <StyledLink to="/catalog"> Catalog </StyledLink>
               </li>
               <li>
-                <StyledLink to="/favorite"> Favorite </StyledLink>
+                <StyledLink to="/favorites"> Favorite </StyledLink>
               </li>
             </NavList>
           </Nav>

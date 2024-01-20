@@ -13,14 +13,13 @@ import { useDispatch } from 'react-redux';
 export const CatalogList = () => {
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
-  console.log(page);
 
   useEffect(() => {
     dispatch(fetcherAllCars(page));
   }, [dispatch, page]);
 
   const filteredCars = useSelector(selectfilteredCars);
-  console.log(filteredCars);
+
   return (
     <Container>
       <List>

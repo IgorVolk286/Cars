@@ -14,7 +14,7 @@ export const HomePage = () => {
     <Section>
       <Container>
         <Wrap>
-          <Title>YOUR SERVICES</Title>
+          <Title>OUR SERVICES</Title>
           <List>
             <Item> Bay car</Item>
             <Item> Sold your car</Item>
