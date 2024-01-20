@@ -15,7 +15,7 @@ import {
 } from '../FavoriteList/FavoriteList.styled.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { getFavoriteCar } from '../../redux/operations.js';
-import { selectFavorite } from '../../redux/FavoriteSlice.js';
+import { selectFavorite, delCar } from '../../redux/FavoriteSlice.js';
 import { ModalCar } from 'components/Modal/Modal.jsx';
 import { ModalContent } from 'components/Modal/ModalContent/Modalcontent.jsx';
 
@@ -25,18 +25,23 @@ export const FavoriteList = () => {
   const favorit = useSelector(selectFavorite);
 
   console.log(favorit);
+
+  const dispatch = useDispatch();
+
   const createFavorite = e => {
     const idCurrent = e.currentTarget.id;
     console.log(idCurrent);
-    dispatch(getFavoriteCar(idCurrent));
+    const index = favorit.findIndex(item => item.id === idCurrent);
+    console.log(index);
+    if (index !== -1) {
+      dispatch(delCar(idCurrent));
+    }
   };
 
   const toggleModal = e => {
     setisOpen(!isOpen);
     setidTarget(e.target.id);
   };
-
-  const dispatch = useDispatch();
 
   return (
     <Container>
@@ -63,9 +68,7 @@ export const FavoriteList = () => {
                 <Img src={img} alt="img auto" />
                 <Title>
                   <Titl>
-                    <P>
-                      {make},{/* <Span>{model},</Span> */}
-                    </P>
+                    <P>{make},</P>
                     <p>{year}</p>
                   </Titl>
 

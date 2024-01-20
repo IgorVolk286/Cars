@@ -14,12 +14,22 @@ import {
 import { ModalCar } from 'components/Modal/Modal';
 import { ModalContent } from 'components/Modal/ModalContent/Modalcontent';
 import { getFavoriteCar } from '../../redux/operations';
-import { useDispatch } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { selectFavorite } from '../../redux/FavoriteSlice.js';
+import { delCar } from '../../redux/FavoriteSlice';
+console.log(delCar);
+const bn = {
+  fill: 'red',
+};
+const bk = {
+  fill: 'red',
+};
 export const CarItem = ({ car }) => {
   const [isOpen, setisOpen] = useState(false);
   console.log(car.id);
   const [idTarget, setidTarget] = useState('');
+  const favorit = useSelector(selectFavorite);
+
   const {
     id,
     img,
@@ -38,16 +48,26 @@ export const CarItem = ({ car }) => {
     setidTarget(e.target.id);
   };
   const dispatch = useDispatch();
+
   const createFavorite = e => {
     const idCurrent = e.currentTarget.id;
     console.log(idCurrent);
-    dispatch(getFavoriteCar(idCurrent));
+    const index = favorit.findIndex(item => item.id === idCurrent);
+    console.log(index);
+
+    if (index !== -1) {
+      dispatch(delCar(idCurrent));
+    } else {
+      dispatch(getFavoriteCar(idCurrent));
+    }
   };
 
   return (
     <Card key={id} id={id}>
       <ButtonFavorit type="button" id={id} onClick={createFavorite}>
-        <HardNorm />
+        <HardNorm
+        // style={!favorite.find(item => item.id === id) ? { bn } : { bk }}
+        />
       </ButtonFavorit>
       <Img src={img} alt="img auto" />
       <Title>

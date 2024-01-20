@@ -16,6 +16,11 @@ export const favoriteSlice = createSlice({
     isLoading: false,
     error: null,
   },
+  reducers: {
+    delCar(state, { payload }) {
+      state.favorites = state.favorites.filter(item => item.id !== payload);
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(getFavoriteCar.pending, (state, action) => {
@@ -31,7 +36,7 @@ export const favoriteSlice = createSlice({
       });
   },
 });
-
+export const { delCar } = favoriteSlice.actions;
 export const favoriteReducer = favoriteSlice.reducer;
-// export const selectIsLoading = state => state.cars.isLoading;
+
 export const selectFavorite = state => state.favorite.favorites;
