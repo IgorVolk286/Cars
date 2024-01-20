@@ -19,7 +19,7 @@ export const Img = styled.img`
     url(<path-to-image>), lightgray 50% / cover no-repeat;
 `;
 export const Title = styled.div`
-  margin-top: 5%;
+  margin-top: 5px;
   display: flex;
   width: 100%;
   justify-content: flex-start;
@@ -91,7 +91,7 @@ export const Div = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 `;
 export const RentItem = styled.li`
   color: #363535;
@@ -106,4 +106,17 @@ export const RentItem = styled.li`
   align-items: center;
   border-radius: 35px;
   background: #f9f9f9;
+`;
+export const ButtonCall = styled.button`
+  display: flex;
+  padding: 12px 50px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  background: #3470ff;
+  margin: 0px;
+`;
+
+export const Link = styled.a`
+  color: #ffffff;
 `;

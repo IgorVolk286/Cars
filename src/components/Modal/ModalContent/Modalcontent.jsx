@@ -16,6 +16,8 @@ import {
   AutoLast,
   Div,
   RentItem,
+  ButtonCall,
+  Link,
 } from '../ModalContent/modalcontent.styled.js';
 export const ModalContent = ({ idTarget, car }) => {
   // const dispatch = useDispatch();
@@ -36,7 +38,7 @@ export const ModalContent = ({ idTarget, car }) => {
           <P>{car.year}</P>
         </Title>
         <Auto>
-          <ItemAuto>{car.address}</ItemAuto>
+          <ItemAuto>{car.address.slice(20)}</ItemAuto>
           <ItemAuto>Id:{car.id}</ItemAuto>
           <ItemAuto>Year:{car.year}</ItemAuto>
           <ItemAuto>Type:{car.type}</ItemAuto>
@@ -75,6 +77,9 @@ export const ModalContent = ({ idTarget, car }) => {
             </RentItem>
           </Auto>
         </Div>
+        <ButtonCall type="buttom">
+          <Link href="tel:+380730000000">Rental Car</Link>
+        </ButtonCall>
       </Card>
     </Wrap>
   );

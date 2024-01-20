@@ -15,9 +15,11 @@ import {
 } from 'components/CarItem/CarItem.styled';
 import { ModalCar } from 'components/Modal/Modal';
 import { ModalContent } from 'components/Modal/ModalContent/Modalcontent';
+import { getFavoriteCar } from '../../redux/operations';
+import { useDispatch } from 'react-redux';
 
 export const CarItem = ({ car }) => {
-  const [isOpen, setisOpen] = useState(true);
+  const [isOpen, setisOpen] = useState(false);
   console.log(car.id);
   const [idTarget, setidTarget] = useState('');
   const {
@@ -34,15 +36,16 @@ export const CarItem = ({ car }) => {
   } = car;
 
   const toggleModal = e => {
-    setidTarget(e.target.id);
     setisOpen(!isOpen);
+    setidTarget(e.target.id);
+  };
+  const dispatch = useDispatch();
+  const createFavorite = e => {
+    const idCurrent = e.currentTarget.id;
+    console.log(idCurrent);
+    dispatch(getFavoriteCar(idCurrent));
   };
 
-  const createFavorite = e => {};
-  //   const idCurrent = e.currentTarget.id;
-  //   console.log(idCurrent);
-  //   dispatch(getFavoriteCar(idCurrent));
-  // };
   return (
     <Card key={id} id={id}>
       <ButtonFavorit type="button" id={id} onClick={createFavorite}>

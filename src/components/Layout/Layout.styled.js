@@ -26,7 +26,12 @@ export const Header = styled.header`
 `;
 
 export const StyledLink = styled(NavLink)`
-  color: black;
+  color: #121417;
+  font-family: Manrope;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
 
   &.active {
     color: blue;

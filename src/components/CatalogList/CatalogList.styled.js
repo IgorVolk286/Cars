@@ -97,6 +97,8 @@ export const Titl = styled.div`
 export const Auto = styled.ul`
   display: flex;
   flex-wrap: wrap;
+
+  justify-content: flex-start;
 `;
 export const ItemAuto = styled.li`
   color: rgba(18, 20, 23, 0.5);
@@ -107,4 +109,18 @@ export const ItemAuto = styled.li`
   font-weight: 400;
   line-height: 18px;
   padding: 0px 6px;
+`;
+export const LoadMore = styled.button`
+  color: #3470ff;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  text-decoration-line: underline;
+  background: transparent;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  display: block;
 `;

@@ -1,6 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createSelector } from '@reduxjs/toolkit';
 import { fetcherAllCars, getByIdCar } from '../redux/operations';
-
+import { selectFilter } from '../redux/FilterSlise';
 const handlePending = state => {
   state.isLoading = true;
 };
@@ -14,6 +14,12 @@ export const carsSlice = createSlice({
     cars: [],
     isLoading: false,
     error: null,
+    page: 1,
+  },
+  redusers: {
+    pageChanger(state, action) {
+      state.page = state.page + 1;
+    },
   },
   extraReducers: builder => {
     builder
@@ -23,7 +29,7 @@ export const carsSlice = createSlice({
       .addCase(fetcherAllCars.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.error = null;
-        state.cars = payload;
+        state.cars = [...state.cars, ...payload];
       })
 
       .addCase(getByIdCar.pending, (state, action) => {
@@ -47,12 +53,17 @@ export const carsReducer = carsSlice.reducer;
 export const selectCars = state => state.cars.cars;
 export const selectIsLoading = state => state.cars.isLoading;
 export const selectError = state => state.cars.error;
-// export const selectCar = state => state.cars.car;
 
-// export const selectVisibleContacts = createSelector(
-//   [selectContacts, selectFilter],
-//   (contacts, filter) =>
-//     contacts.filter(contact =>
-//       contact.name.toLowerCase().includes(filter.toLowerCase())
-//     )
-// );
+export const selectfilteredCars = createSelector(
+  [selectCars, selectFilter],
+  (cars, filter) => cars.filter(car => car.make.includes(filter.brand))
+);
+
+// export const filteredCars = state => {
+//   const cars = selectCars(state);
+//   const filter = selectFilter(state);
+
+//   return cars.filter(
+//     car => car.make.toLowerCase() === filter.brand.toLowerCase()
+//   );
+// };

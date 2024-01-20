@@ -5,8 +5,8 @@ export const OverLay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* top: 0;
-  left: 0; */
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: rgba(18, 20, 23, 0.5);
@@ -34,10 +34,11 @@ export const Svg = styled(IconX)`
   height: 24px;
 `;
 export const ButtonCall = styled.button`
-  display: inline-flex;
+  display: flex;
   padding: 12px 50px;
   justify-content: center;
   align-items: center;
   border-radius: 12px;
   background: #3470ff;
+  margin: 0px;
 `;

@@ -31,10 +31,6 @@ export const ModalCar = ({ children, toggleModal }) => {
           <Svg />
         </ButtonClose>
         {children}
-
-        <ButtonCall type="buttom">
-          <a href="tel:+380730000000">Rental Car</a>
-        </ButtonCall>
       </Modal>
     </OverLay>,
     modalElement
