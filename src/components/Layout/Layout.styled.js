@@ -11,7 +11,7 @@ export const NavList = styled.ul`
   margin: 0 auto;
   gap: 20px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: center;
 `;
 export const Nav = styled.ul`
@@ -20,8 +20,7 @@ export const Nav = styled.ul`
 export const Header = styled.header`
   width: 1440px;
   padding: 20px 20px;
-  outline: 1px solid red;
-  background-color: #f0f0f0;
+
   margin: 0 auto;
 `;
 
@@ -32,7 +31,7 @@ export const StyledLink = styled(NavLink)`
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
-
+  text-transform: uppercase;
   &.active {
     color: blue;
   }

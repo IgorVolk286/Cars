@@ -6,6 +6,7 @@ import {
   Button,
   List,
   StyledLink,
+  Item,
 } from '../HomePage/HomePage.styled.js';
 
 export const HomePage = () => {
@@ -13,13 +14,13 @@ export const HomePage = () => {
     <Section>
       <Container>
         <Wrap>
-          <Title>OUR SERVICES</Title>
+          <Title>YOUR SERVICES</Title>
           <List>
-            <li> Bay car</li>
-            <li> Sold your car</li>
-            <li> Trade in</li>
-            <li> Regisrtation</li>
-            <li> Inshurence</li>
+            <Item> Bay car</Item>
+            <Item> Sold your car</Item>
+            <Item> Trade in</Item>
+            <Item> Registration</Item>
+            <Item> Insurence</Item>
           </List>
           <Button type="button">
             <StyledLink to="/catalog"> Catalog </StyledLink>

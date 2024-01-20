@@ -63,7 +63,7 @@ export const CarItem = ({ car }) => {
       <ButtonFavorit type="button" id={id} onClick={createFavorite}>
         {favorit.some(item => item.id === id) ? <HardActive /> : <HardNorm />}
       </ButtonFavorit>
-      <Img src={img} alt="img auto" />
+      <Img src={img} loading="lazy" alt="img auto" />
       <Title>
         <Titl>
           <P>{make},</P>

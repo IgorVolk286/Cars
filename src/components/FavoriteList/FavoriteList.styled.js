@@ -50,10 +50,12 @@ export const ButtonFavorit = styled.button`
 `;
 export const Img = styled.img`
   width: 410px;
-  height: 270px;
+  height: 265px;
   display: block;
   overflow: hidden;
+  background-size: cover;
   border-radius: 15px;
+  margin-top: 0px;
   background: linear-gradient(
       180deg,
       rgba(18, 20, 23, 0.5) 2.5%,

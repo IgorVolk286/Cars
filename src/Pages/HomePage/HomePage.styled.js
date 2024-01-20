@@ -18,8 +18,8 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
   text-align: center;
-  font-family: Roboto;
-  font-size: 16px;
+  font-family: Manrope;
+  font-size: 36px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
@@ -29,9 +29,10 @@ export const Wrap = styled.div`
   justify-content: space-evenly;
   flex-direction: column;
   align-self: center;
+  margin-top: 30px;
   width: 400px;
   height: 500px;
-  padding: 20px;
+
   margin-left: 60px;
   box-shadow: 0px 4px 14px 0px rgba(64, 123, 255, 0.54);
   border-radius: 30px;
@@ -41,6 +42,7 @@ export const Button = styled.button`
   margin: 0 auto;
   padding: 12px 99px;
   border-radius: 12px;
+  font-size: 16px;
   background: #3470ff;
   color: #ffffff;
   &:hover {
@@ -53,8 +55,18 @@ export const List = styled.ul`
   flex-direction: column;
   gap: 30px;
   align-items: center;
+  margin-top: 0px;
 `;
 
 export const StyledLink = styled(NavLink)`
   color: #ffffff;
+`;
+export const Item = styled.li`
+  text-transform: uppercase;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
 `;

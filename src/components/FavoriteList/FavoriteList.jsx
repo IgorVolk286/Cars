@@ -15,7 +15,6 @@ import {
   HardActive,
 } from '../FavoriteList/FavoriteList.styled.js';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { selectFavorite, delCar } from '../../redux/FavoriteSlice.js';
 import { ModalCar } from 'components/Modal/Modal.jsx';
 import { ModalContent } from 'components/Modal/ModalContent/Modalcontent.jsx';
@@ -23,6 +22,7 @@ import { ModalContent } from 'components/Modal/ModalContent/Modalcontent.jsx';
 export const FavoriteList = () => {
   const [isOpen, setisOpen] = useState(false);
   const [idTarget, setidTarget] = useState('');
+  console.log(idTarget);
   const favorit = useSelector(selectFavorite);
 
   const dispatch = useDispatch();
