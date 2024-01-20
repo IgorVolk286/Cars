@@ -14,13 +14,12 @@ export const carsSlice = createSlice({
     cars: [],
     isLoading: false,
     error: null,
-    page: 1,
   },
-  redusers: {
-    pageChanger(state, action) {
-      state.page = state.page + 1;
-    },
-  },
+  // redusers: {
+  //   pageChanger(state, action) {
+  //     state.page = state.page + 1;
+  //   },
+  // },
   extraReducers: builder => {
     builder
       .addCase(fetcherAllCars.pending, (state, action) => {
@@ -58,12 +57,3 @@ export const selectfilteredCars = createSelector(
   [selectCars, selectFilter],
   (cars, filter) => cars.filter(car => car.make.includes(filter.brand))
 );
-
-// export const filteredCars = state => {
-//   const cars = selectCars(state);
-//   const filter = selectFilter(state);
-
-//   return cars.filter(
-//     car => car.make.toLowerCase() === filter.brand.toLowerCase()
-//   );
-// };

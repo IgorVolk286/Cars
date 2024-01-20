@@ -16,10 +16,6 @@ export const CatalogList = () => {
   console.log(page);
 
   useEffect(() => {
-    window.scrollBy({
-      top: 900,
-      behavior: 'smooth',
-    });
     dispatch(fetcherAllCars(page));
   }, [dispatch, page]);
 

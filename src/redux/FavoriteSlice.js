@@ -10,6 +10,7 @@ const handleRejected = (state, { payload }) => {
 };
 export const favoriteSlice = createSlice({
   name: 'favorite',
+
   initialState: {
     favorites: [],
     isLoading: false,
@@ -25,7 +26,6 @@ export const favoriteSlice = createSlice({
         state.error = null;
         state.favorites = [...state.favorites, payload];
       })
-
       .addCase(getFavoriteCar.rejected, (state, action) => {
         handleRejected(state, action);
       });
