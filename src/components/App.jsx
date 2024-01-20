@@ -3,7 +3,7 @@ import { HomePage } from 'Pages/HomePage/HomePage';
 import { CatalogPage } from '../Pages/CatalogPage/CatalogPage';
 import { FavoritesPage } from '../Pages/FavoritesPage/FavoritesPage';
 import { Layout } from './Layout/Layout';
-import { NotFound } from '../components/NotFound/NotFound';
+
 export const App = () => {
   return (
     <div>
