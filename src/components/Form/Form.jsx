@@ -7,14 +7,11 @@ import {
   Label,
   OptionS,
 } from '../Form/Form.styled';
-import Select from 'react-select';
+
 import {
   selectBrand,
   actualBrand,
   actualPriceRenta,
-  actualMileMin,
-  actualMileMax,
-  resezeT,
 } from '../../redux/FilterSlise';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
@@ -86,22 +83,7 @@ export const Form = () => {
             ))}
           </Selects>
         </Label>
-        {/* <Label>
-          Сar mileage / km
-          <Select value={selectBrand} name="brand" onChange={handl}></Select>
-        </Label>
-        <Label>
-          <br></br>
-          <Select value={selectBrand} name="brand" onChange={handl}></Select>
-            </Label> */}
-        {/* */}
-        {/* <div> */}
-        {/* <Selects
-            defaultValue={selectPrice}
-            onChange={setselectPrice}
-            options={options}
-          />
-        </div> */}
+
         <Button type="submit"> Search </Button>
       </Forma>
     </Div>

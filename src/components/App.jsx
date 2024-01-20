@@ -3,23 +3,11 @@ import { HomePage } from 'Pages/HomePage/HomePage';
 import { CatalogPage } from '../Pages/CatalogPage/CatalogPage';
 import { FavoritesPage } from '../Pages/FavoritesPage/FavoritesPage';
 import { Layout } from './Layout/Layout';
-import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetcherAllCars } from '../redux/operations';
+// import { useEffect, useState } from 'react';
+// import { useDispatch } from 'react-redux';
+// import { fetcherAllCars } from '../redux/operations';
 
 export const App = () => {
-  // const dispatch = useDispatch();
-  // const [page, setPage] = useState(1);
-  // console.log(page);
-
-  // useEffect(() => {
-  //   dispatch(fetcherAllCars(page));
-  // }, [dispatch, page]);
-
-  // const handlPage = () => {
-  //   setPage(3);
-  // };
-
   return (
     <div>
       <Routes>

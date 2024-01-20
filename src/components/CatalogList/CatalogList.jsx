@@ -4,14 +4,13 @@ import {
   LoadMore,
 } from '../CatalogList/CatalogList.styled.js';
 import { useSelector } from 'react-redux';
-import { selectCars, selectfilteredCars } from '../../redux/CarsSlice.js';
+import { selectfilteredCars } from '../../redux/CarsSlice.js';
 import { CarItem } from '../CarItem/CarItem.jsx';
 import { fetcherAllCars } from '../../redux/operations.js';
-import { selectFilter } from '../../redux/FilterSlise.js';
+
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 export const CatalogList = () => {
-  const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
   console.log(page);
@@ -24,7 +23,6 @@ export const CatalogList = () => {
     dispatch(fetcherAllCars(page));
   }, [dispatch, page]);
 
-  const cars = useSelector(selectCars);
   const filteredCars = useSelector(selectfilteredCars);
   console.log(filteredCars);
   return (
