@@ -1,6 +1,7 @@
 import { createSlice, createSelector } from '@reduxjs/toolkit';
 import { fetcherAllCars, getByIdCar } from '../redux/operations';
 import { selectFilter } from '../redux/FilterSlise';
+
 const handlePending = state => {
   state.isLoading = true;
 };
@@ -15,11 +16,7 @@ export const carsSlice = createSlice({
     isLoading: false,
     error: null,
   },
-  // redusers: {
-  //   pageChanger(state, action) {
-  //     state.page = state.page + 1;
-  //   },
-  // },
+
   extraReducers: builder => {
     builder
       .addCase(fetcherAllCars.pending, (state, action) => {
@@ -55,5 +52,7 @@ export const selectError = state => state.cars.error;
 
 export const selectfilteredCars = createSelector(
   [selectCars, selectFilter],
-  (cars, filter) => cars.filter(car => car.make.includes(filter.brand))
+  (cars, filter) => {
+    cars.filter(car => car.make.includes(filter.brand));
+  }
 );

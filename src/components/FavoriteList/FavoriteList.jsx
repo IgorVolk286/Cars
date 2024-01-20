@@ -42,58 +42,46 @@ export const FavoriteList = () => {
   return (
     <Container>
       <List>
-        {favorit.map(
-          ({
-            id,
-            img,
-            make,
-            model,
-            year,
-            rentalPrice,
-            address,
-            type,
-            rentalCompany,
-            accessories,
-          }) => {
-            return (
-              <Card key={id} id={id}>
-                <ButtonFavorit type="button" id={id} onClick={createFavorite}>
-                  {favorit.some(item => item.id === id) ? (
-                    <HardActive />
-                  ) : (
-                    <HardNorm />
-                  )}
-                </ButtonFavorit>
-                <Img src={img} alt="img auto" />
-                <Title>
-                  <Titl>
-                    <P>{make},</P>
-                    <p>{year}</p>
-                  </Titl>
-
-                  <P>{rentalPrice}</P>
-                </Title>
-                <Auto>
-                  <ItemAuto>{address.slice(19)}</ItemAuto>
-                  <ItemAuto>{rentalCompany}</ItemAuto>
-                  <ItemAuto>Premium</ItemAuto>
-                  <ItemAuto>{type}</ItemAuto>
-                  <ItemAuto>{model}</ItemAuto>
-                  <ItemAuto>{id}</ItemAuto>
-                  <ItemAuto>{accessories.slice(0, 1)}</ItemAuto>
-                </Auto>
-                <Button type="button" id={id} onClick={toggleModal}>
-                  Learn More
-                </Button>
-                {isOpen && (
-                  <ModalCar toggleModal={toggleModal}>
-                    <ModalContent idTarget={idTarget} />
-                  </ModalCar>
+        {favorit.map(car => {
+          return (
+            <Card key={car.id} id={car.id}>
+              <ButtonFavorit type="button" id={car.id} onClick={createFavorite}>
+                {favorit.some(item => item.id === car.id) ? (
+                  <HardActive />
+                ) : (
+                  <HardNorm />
                 )}
-              </Card>
-            );
-          }
-        )}
+              </ButtonFavorit>
+              <Img src={car.img} alt="img auto" />
+              <Title>
+                <Titl>
+                  <P>{car.make},</P>
+                  <p>{car.year}</p>
+                </Titl>
+
+                <P>{car.rentalPrice}</P>
+              </Title>
+              <Auto>
+                <ItemAuto>{car.address.slice(19)}</ItemAuto>
+                <ItemAuto>{car.rentalCompany}</ItemAuto>
+                <ItemAuto>Premium</ItemAuto>
+                <ItemAuto>{car.type}</ItemAuto>
+                <ItemAuto>{car.model}</ItemAuto>
+                <ItemAuto>{car.id}</ItemAuto>
+                <ItemAuto>{car.accessories.slice(0, 1)}</ItemAuto>
+              </Auto>
+              <Button type="button" id={car.id} onClick={toggleModal}>
+                Learn More
+              </Button>
+              {isOpen && (
+                <ModalCar toggleModal={toggleModal}>
+                  <ModalContent idTarget={idTarget} car={car} />
+                </ModalCar>
+              )}
+            </Card>
+          );
+        })}
+        )
       </List>
     </Container>
   );

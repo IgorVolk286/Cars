@@ -123,4 +123,7 @@ export const LoadMore = styled.button`
   margin-right: auto;
   margin-top: 100px;
   display: block;
+  &:hover {
+    background: #0b44cd;
+  }
 `;

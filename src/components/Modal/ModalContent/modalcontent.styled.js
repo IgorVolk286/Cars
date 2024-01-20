@@ -115,6 +115,9 @@ export const ButtonCall = styled.button`
   border-radius: 12px;
   background: #3470ff;
   margin: 0px;
+  &:hover {
+    background: #0b44cd;
+  }
 `;
 
 export const Link = styled.a`

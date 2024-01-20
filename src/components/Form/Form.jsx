@@ -1,14 +1,18 @@
 import {
   Forma,
   Selects,
-  Options,
+  Option,
   Button,
   Div,
   Label,
   OptionS,
+  InputLeft,
+  InputRight,
+  Input,
 } from '../Form/Form.styled';
 
 import {
+  selectPriceRenta,
   selectBrand,
   actualBrand,
   actualPriceRenta,
@@ -18,8 +22,10 @@ import { useState } from 'react';
 
 export const Form = () => {
   const brand = useSelector(selectBrand);
+  const price = useSelector(selectPriceRenta);
+
   const [selectBrands, setselectBrands] = useState(brand);
-  const [selectPrice, setselectPrice] = useState();
+  const [selectPrice, setselectPrice] = useState(price);
   const dispatch = useDispatch();
 
   const handlBrand = e => {
@@ -67,23 +73,30 @@ export const Form = () => {
           <Selects value={selectBrands} onChange={handlBrand}>
             <OptionS selected>Enter the text</OptionS>
             {options.map(option => (
-              <Options key={option} value={option}>
+              <Option key={option} value={option}>
                 {option}
-              </Options>
+              </Option>
             ))}
           </Selects>
         </Label>
         <Label>
           Price/ 1 hour
-          <Selects value={selectBrand} onChange={handlPrice}>
+          <Selects value={selectPrice} onChange={handlPrice}>
+            <OptionS selected>To $</OptionS>
             {optionsPrice.map(option => (
-              <Options key={option} value={option}>
+              <Option key={option} value={option}>
                 {option}
-              </Options>
+              </Option>
             ))}
           </Selects>
         </Label>
-
+        <Input>
+          <Label>
+            Сar mileage / km
+            <InputLeft type="text" placeholder="From" />
+          </Label>
+          <InputRight type="text" placeholder="To" />
+        </Input>
         <Button type="submit"> Search </Button>
       </Forma>
     </Div>

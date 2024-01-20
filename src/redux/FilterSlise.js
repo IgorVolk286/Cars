@@ -19,5 +19,6 @@ export const filterSlice = createSlice({
 
 export const filterReduser = filterSlice.reducer;
 export const selectBrand = state => state.filter.brand;
+export const selectPriceRenta = state => state.filter.priceRenta;
 export const selectFilter = state => state.filter;
 export const { actualBrand, actualPriceRenta } = filterSlice.actions;

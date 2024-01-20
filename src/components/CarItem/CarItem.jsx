@@ -22,7 +22,7 @@ console.log(delCar);
 
 export const CarItem = ({ car }) => {
   const [isOpen, setisOpen] = useState(false);
-  console.log(car.id);
+
   const [idTarget, setidTarget] = useState('');
   const favorit = useSelector(selectFavorite);
 

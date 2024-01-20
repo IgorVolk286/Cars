@@ -14,8 +14,9 @@ import {
   RentItem,
   ButtonCall,
   Link,
-} from '../ModalContent/modalcontent.styled.js';
+} from './modalcontent.styled';
 export const ModalContent = ({ idTarget, car }) => {
+  console.log(car);
   return (
     <Wrap>
       <Img src={car.img} alt="img auto" />
