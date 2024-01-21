@@ -22,6 +22,7 @@ export const Title = styled.div`
   margin-top: 5px;
   display: flex;
   width: 100%;
+
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 8px;
@@ -40,7 +41,7 @@ export const P = styled.p`
   font-size: 16px;
   font-style: normal;
   font-weight: bold;
-  margin: 0px;
+  margin-right: 5px;
 `;
 export const Card = styled.div`
   display: flex;

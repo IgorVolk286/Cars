@@ -21,8 +21,10 @@ export const ModalContent = ({ idTarget, car }) => {
       <Img src={car.img} alt="img auto" />
       <Card>
         <Title>
-          <P>{car.make} </P>
-          <Span> {car.model},</Span>
+          <P>
+            {car.make} <Span>{car.model},</Span>
+          </P>
+
           <P>{car.year}</P>
         </Title>
         <Auto>
