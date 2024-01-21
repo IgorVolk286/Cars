@@ -3,12 +3,12 @@ import {
   Container,
   LoadMore,
 } from '../CatalogList/CatalogList.styled.js';
-import { useSelector } from 'react-redux';
-import { selectfilteredCars } from '../../redux/CarsSlice.js';
+
+import { selectfilteredCars, selectIsLoading } from '../../redux/CarsSlice.js';
 import { CarItem } from '../CarItem/CarItem.jsx';
 import { fetcherAllCars } from '../../redux/operations.js';
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
 
 export const CatalogList = () => {
@@ -20,8 +20,7 @@ export const CatalogList = () => {
   }, [dispatch, page]);
 
   const filteredCars = useSelector(selectfilteredCars);
-  console.log(selectfilteredCars);
-
+  const loading = useSelector(selectIsLoading);
   return (
     <Container>
       <List>
@@ -29,9 +28,11 @@ export const CatalogList = () => {
           <CarItem car={car} key={nanoid()} />
         ))}
       </List>
-      <LoadMore type="button" onClick={() => setPage(page + 1)}>
-        Load More
-      </LoadMore>
+      {!loading && (
+        <LoadMore type="button" onClick={() => setPage(page + 1)}>
+          Load More
+        </LoadMore>
+      )}
     </Container>
   );
 };

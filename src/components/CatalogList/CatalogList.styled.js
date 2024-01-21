@@ -5,6 +5,7 @@ export const Card = styled.div`
   height: 426px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
 `;
 export const List = styled.ul`
   display: flex;
@@ -97,12 +98,13 @@ export const Titl = styled.div`
 export const Auto = styled.ul`
   display: flex;
   flex-wrap: wrap;
-
+  gap: 29px;
   justify-content: flex-start;
+  flex-basis: auto;
 `;
+
 export const ItemAuto = styled.li`
   color: rgba(18, 20, 23, 0.5);
-
   font-family: Manrope;
   font-size: 12px;
   font-style: normal;

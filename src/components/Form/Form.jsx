@@ -19,11 +19,12 @@ import {
 } from '../../redux/FilterSlise';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-
+import { Loader } from '../Loader/Loader.jsx';
+import { selectIsLoading } from '../../redux/CarsSlice.js';
 export const Form = () => {
   const brand = useSelector(selectBrand);
   const price = useSelector(selectPriceRenta);
-
+  const loading = useSelector(selectIsLoading);
   const [selectBrands, setselectBrands] = useState(brand);
   const [selectPrice, setselectPrice] = useState(price);
   const dispatch = useDispatch();
@@ -68,6 +69,7 @@ export const Form = () => {
   };
   return (
     <Div>
+      {loading && <Loader />}
       <Forma onSubmit={submit}>
         <Label>
           Car brand
