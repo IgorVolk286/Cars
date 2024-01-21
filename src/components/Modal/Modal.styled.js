@@ -23,7 +23,7 @@ export const ButtonClose = styled.button`
 
 export const Modal = styled.div`
   width: 541px;
-  height: 752px;
+  height: auto;
   padding: 40px;
   position: relative;
   border-radius: 24px;

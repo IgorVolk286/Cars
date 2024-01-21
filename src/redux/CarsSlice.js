@@ -52,5 +52,19 @@ export const selectError = state => state.cars.error;
 
 export const selectfilteredCars = createSelector(
   [selectCars, selectFilter],
-  (cars, filter) => cars.filter(car => car.make.includes(filter.brand))
+  (cars, filter) => {
+    if (filter.brand === '' && filter.priceRenta === '10') {
+      return cars;
+    } else if (filter.priceRenta === '10' && filter.brand !== '') {
+      return cars.filter(car => car.make.includes(filter.brand));
+    } else if (filter.priceRenta !== '10' && filter.brand === '') {
+      return cars.filter(car => car.rentalPrice.includes(filter.priceRenta));
+    } else if (filter.priceRenta !== '10' && filter.brand !== '') {
+      return cars.filter(
+        car =>
+          car.make.includes(filter.brand) &&
+          car.rentalPrice.includes(filter.priceRenta)
+      );
+    }
+  }
 );

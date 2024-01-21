@@ -64,6 +64,7 @@ export const Form = () => {
     dispatch(actualBrand(selectBrands));
     dispatch(actualPriceRenta(selectPrice));
     setselectBrands('');
+    setselectPrice('10');
   };
   return (
     <Div>
