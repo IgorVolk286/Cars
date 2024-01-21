@@ -11,6 +11,7 @@ import {
   Auto,
   ItemAuto,
   HardActive,
+  Span,
 } from 'components/CarItem/CarItem.styled';
 import { ModalCar } from 'components/Modal/Modal';
 import { ModalContent } from 'components/Modal/ModalContent/Modalcontent';
@@ -63,12 +64,13 @@ export const CarItem = ({ car }) => {
       <Img src={img} loading="lazy" alt="img auto" />
       <Title>
         <Titl>
-          <P>{make},</P>
+          <P>{make}</P>
+          <Span>{model},</Span>
           <p>{year}</p>
         </Titl>
-
         <P>{rentalPrice}</P>
       </Title>
+
       <Auto>
         <ItemAuto>{address.slice(19)}</ItemAuto>
         <ItemAuto>{rentalCompany}</ItemAuto>

@@ -66,18 +66,21 @@ export const Img = styled.img`
     url(<path-to-image>), lightgray 50% / cover no-repeat;
 `;
 export const Title = styled.div`
+  width: 100%;
   display: flex;
-  justify-content: flex-start;
+  flex-wrap: nowrap;
+  justify-content: space-between;
   align-items: center;
-  gap: 140px;
+  flex-basis: auto;
   margin-top: 14px;
 `;
 export const Span = styled.span`
-  color: #121417;
+  color: #3470ff;
   font-family: Manrope;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
+  line-height: 24px;
 `;
 export const TextCard = styled.param`
   color: #3470ff;
@@ -93,10 +96,12 @@ export const P = styled.span`
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
+  display: block;
 `;
 export const Titl = styled.div`
   display: flex;
   align-items: center;
+  gap: 3px;
 `;
 
 export const Auto = styled.ul`
