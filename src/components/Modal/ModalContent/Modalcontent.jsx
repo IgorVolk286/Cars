@@ -46,7 +46,7 @@ export const ModalContent = ({ idTarget, car }) => {
           </AutoLast>
           <AutoLast>
             {car.functionalities.map(item => {
-              return <ItemAuto>{item}</ItemAuto>;
+              return <ItemAuto key={car.id}>{item}</ItemAuto>;
             })}
           </AutoLast>
         </Div>

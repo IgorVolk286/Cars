@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { ReactComponent as IconNorm } from '../../img/normal.svg';
 import { ReactComponent as IconActive } from '../../img/active.svg';
-export const Card = styled.div`
+export const Card = styled.li`
   width: 274px;
   height: 426px;
   display: flex;

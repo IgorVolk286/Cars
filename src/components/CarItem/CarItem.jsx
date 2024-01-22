@@ -42,6 +42,7 @@ export const CarItem = ({ car }) => {
   const toggleModal = e => {
     setisOpen(!isOpen);
     setidTarget(e.target.id);
+    console.log(e.target.id);
   };
   const dispatch = useDispatch();
 
