@@ -17,6 +17,7 @@ export const Img = styled.img`
       rgba(18, 20, 23, 0) 41.07%
     ),
     url(<path-to-image>), lightgray 50% / cover no-repeat;
+  background-size: contain;
 `;
 export const Title = styled.div`
   margin-top: 5px;
